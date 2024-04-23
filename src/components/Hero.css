@@ -1,0 +1,38 @@
+.hero{
+    width: 100%;
+    min-height: 100vh;
+    background:url('../assets/background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.overlay{
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.555);
+    color: white;  
+    display: flex;
+   align-items: center;
+   justify-content: center; 
+   flex-direction: column;
+   gap: 50px;
+}
+.overlay h1{
+    font-size: 40px;
+}
+.overlay div{
+     display: flex;
+     gap: 30px;
+}
+
+.overlay div button{
+    padding: 15px;
+    min-width: 100px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+.overlay div button:hover{
+    background-color: rgb(201, 199, 199);
+}
