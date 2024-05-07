@@ -23,7 +23,7 @@ export const fetchAllEvents = createAsyncThunk('fetch/events', async (_, { rejec
 
 export const fetchSingleEvent = createAsyncThunk( 'fetch/event', async (value, { rejectWithValue}) => {
     try{
-        const response = await fetch(`https://event-booking-app-1.onrender.com/user/events/${value}`);
+        const response = await fetch(`https://event-booking-app-1.onrender.com/api/v1/user/events/${value}`);
         if (!response.ok) {
             const errorData = await response.json();
             throw new Error(errorData.message || 'Failed to fetch events data');
