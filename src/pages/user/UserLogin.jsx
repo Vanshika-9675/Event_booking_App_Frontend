@@ -6,6 +6,7 @@ import Footerr from '../../components/Footerr';
 import { useDispatch ,useSelector } from 'react-redux'; 
 import {userLogin , STATUSES} from '../../store/userSlice'; 
 import { useNavigate } from 'react-router-dom';
+import {Hourglass} from 'react-loader-spinner';
 
 function UserLogin() {
   
@@ -30,7 +31,18 @@ function UserLogin() {
   };
   
   if (status === STATUSES.LOADING){
-    return <h2>LOADING.....</h2>;
+    return <div className='loader'>
+    <Hourglass
+    className='hourglass'
+ visible={true}
+ height="80"
+ width="80"
+ ariaLabel="hourglass-loading"
+ wrapperStyle={{}}
+ wrapperClass=""
+ colors={['#C30202', '#C30202']} 
+ />
+ </div>
   }
 
   if (status === STATUSES.ERROR){
@@ -39,7 +51,7 @@ function UserLogin() {
 
 
   return (
-    <>
+    <div className='wrapperParent'>
     <Headerr/>
      <div className="login-container">
       <form onSubmit={handleLogin}>
@@ -58,8 +70,7 @@ function UserLogin() {
         </p>
       </form>
     </div>
-    <Footerr/>
-    </>
+    </div>
    
   );
 }

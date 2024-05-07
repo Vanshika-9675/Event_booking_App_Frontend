@@ -67,28 +67,26 @@ const UserProfile = () => {
   };
 
   return (
-    <div>
+    <div className='wrapperParent'>
       <Headerr/>
+      
+      <Sidebar  style={{ flex: '0 0 15%'}} role={'user'}/>
+      <div  style={{ flex: 1}} className="main-content">
       <h1 style={{textAlign:'center'}}>Manage Profile</h1>
-      <Sidebar role={'user'}/>
-      <div className="main-content">
         <div className="profile-section">
           <label>
-            Name:
             <input type="text" value={name} onChange={handleNameChange} placeholder='Updated UserName..' />
             <button className='btn' onClick={updateName}>Update</button>
           </label>
         </div>
         <div className="profile-section">
           <label>
-            Email:
             <input type="email" value={email} onChange={handleEmailChange} placeholder='Updated Email..' />
             <button className='btn' onClick={updateEmail}>Update</button>
           </label>
         </div>
         <div className="profile-section">
           <label>
-            Password:
             <input type="password" value={password} onChange={handlePasswordChange} placeholder='Updated Password..'/>
             <button className='btn' onClick={updatePassword}>Update</button>
           </label>
@@ -97,7 +95,6 @@ const UserProfile = () => {
           <button className='btn' onClick={handleDeleteAccount}>DELETE ACCOUNT</button>
         </div>
       </div>
-      <Footerr/>
     </div>
   );
 };

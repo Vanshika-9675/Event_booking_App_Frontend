@@ -3,6 +3,7 @@
     margin: 75px auto;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: white;
   }
   
   form > div {
@@ -17,7 +18,7 @@
   label {
     display: block;
     margin-bottom: 15px;
-    font-weight: 900;
+    font-weight: 700;
     font-size: large
   }
   
@@ -39,3 +40,5 @@
   button:hover{
     background-color: #a70303;
   }
+
+  

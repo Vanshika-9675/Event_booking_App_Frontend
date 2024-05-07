@@ -5,11 +5,10 @@ import Sidebar from '../../components/Sidebar'
 
 const UserTickets = () => {
   return (
-    <div>
+    <div  className='wrapperParent'>
     <Headerr/>
     <h1 style={{textAlign:'center'}}>User Tickets</h1>
     <Sidebar role={'user'}/>
-     <Footerr/>
   </div>
   )
 }

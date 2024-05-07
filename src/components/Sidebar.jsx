@@ -4,15 +4,15 @@ import './Sidebar.css'
 
 function Sidebar({ role }) {
     const menuItemsOrganizer = [
-        { name: 'Manage Profile', path: '/orgAccount' },
         { name: 'Dashboard', path: '/dashboard' },
+        { name: 'Manage Profile', path: '/orgAccount' },
         { name: 'Add new Events', path: '/addEvents' },
         { name: 'Analytics', path: '/analytics' }
     ];
 
     const menuItemsCustomer = [
+        { name: 'Browse Events', path: '/user' },
         { name: 'Manage Profile', path: '/account' },
-        { name: 'Browse Events', path: '/events' },
         { name: 'My Tickets', path: '/tickets' },
     ];
 

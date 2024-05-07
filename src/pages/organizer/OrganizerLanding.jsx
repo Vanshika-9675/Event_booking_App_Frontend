@@ -7,11 +7,10 @@ import { useSelector } from 'react-redux';
 const OrganizerLanding = () => {
   const isLoggedIn = useSelector(state => state.organizer.isLoggedIn);
   return (
-    <div>
+    <div className='wrapperParent'>
         <OrganizerHeader/>
          <h1 style={{textAlign:'center'}}>Organizer Landing Page</h1>
          {isLoggedIn && <Sidebar role={'organizer'}/>}
-         <Footerr/>
     </div>
   )
 }

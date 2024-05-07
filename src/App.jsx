@@ -2,7 +2,7 @@ import React from 'react'
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import store from './store/Store'
-import Home from './pages/Home';
+import Landing from './pages/Landing';
 import UserLanding from './pages/user/UserLanding';
 import OrganizerLanding from './pages/organizer/OrganizerLanding';
 import UserLogin from './pages/user/UserLogin';
@@ -16,6 +16,8 @@ import OrgProfile from './pages/organizer/OrgProfile';
 import OrgDashboard from './pages/organizer/OrgDashboard';
 import OrgAnalytics from './pages/organizer/OrgAnalytics'
 import AddEvents from './pages/organizer/AddEvents';
+import EventDescription from './pages/user/EventDescription';
+import Footerr from './components/Footerr';
 
 const App = () => {
   return (
@@ -23,7 +25,7 @@ const App = () => {
         <BrowserRouter>
          <Provider store={store}>
          <Routes>
-              <Route path='/' element={<Home />}></Route>
+              <Route path='/' element={<Landing />}></Route>
               <Route path='/user' element={<UserLanding/>}></Route>
               <Route path='/organizer' element={<OrganizerLanding/>}></Route>
               <Route path='/userLogin' element={<UserLogin/>}></Route>
@@ -37,8 +39,10 @@ const App = () => {
               <Route path='/analytics' element={<OrgAnalytics/>}></Route>
               <Route path='/addEvents' element={<AddEvents/>}></Route>
               <Route path='/tickets' element={<UserTickets/>}></Route>
+              <Route path='/eventDescription/:value' element={<EventDescription/>}></Route>
            </Routes>
          </Provider>
+         <Footerr/>
         </BrowserRouter>
     </>
   )

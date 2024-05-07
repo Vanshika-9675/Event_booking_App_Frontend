@@ -40,11 +40,13 @@ const handleOrganizer = ()=>{
   return (
     <div className='hero'>
         <div className="overlay">
+          <div className='hero-main'>
             <h1>Welcome to Event Booking App</h1>
             <h2>{typedText}</h2>
              <div>
                 <button onClick={handleUser}>User</button>
                 <button  onClick={handleOrganizer}>Organizer</button>
+             </div>
              </div>
         </div>
     </div>

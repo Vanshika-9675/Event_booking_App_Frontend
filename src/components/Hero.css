@@ -4,17 +4,25 @@
     background:url('../assets/background.jpg');
     background-size: cover;
     background-position: center;
+    position: relative;
+    z-index: 1000000000;
 }
 .overlay{
     width: 100%;
     min-height: 100vh;
     background-color: rgba(0, 0, 0, 0.555);
     color: white;  
+    gap: 50px;
     display: flex;
-   align-items: center;
-   justify-content: center; 
-   flex-direction: column;
-   gap: 50px;
+}
+.hero-main{
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    flex-direction: column;
 }
 .overlay h1{
     font-size: 40px;

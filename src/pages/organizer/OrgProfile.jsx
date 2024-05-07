@@ -64,28 +64,25 @@ const OrgProfile = () => {
     };
 
   return (
-    <div>
+    <div className='wrapperParent'>
     <OrganizerHeader/>
     <h1 style={{textAlign:'center'}}>Manage Profile</h1>
     <Sidebar role={'organizer'}/>
     <div className="main-content">
       <div className="profile-section">
         <label>
-          Name:
           <input type="text" value={name} onChange={handleNameChange} placeholder='Enter updated Organizer name..' />
           <button className='btn' onClick={updateName}>Update</button>
         </label>
       </div>
       <div className="profile-section">
         <label>
-          Email:
           <input type="email" value={email} onChange={handleEmailChange} placeholder='Updated Email..' />
           <button className='btn' onClick={updateEmail}>Update</button>
         </label>
       </div>
       <div className="profile-section">
         <label>
-          Password:
           <input type="password" value={password} onChange={handlePasswordChange} placeholder='Updated Password..'/>
           <button className='btn' onClick={updatePassword}>Update</button>
         </label>
@@ -94,7 +91,6 @@ const OrgProfile = () => {
         <button className='btn' onClick={handleDeleteAccount}>DELETE ACCOUNT</button>
       </div>
     </div>
-    <Footerr/>
   </div>
   )
 }

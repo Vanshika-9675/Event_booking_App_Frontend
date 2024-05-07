@@ -6,6 +6,7 @@ import { useDispatch ,useSelector } from 'react-redux';
 import {organizerLogin , STATUSES} from '../../store/organizerSlice'; 
 import { useNavigate } from 'react-router-dom';
 import OrganizerHeader from '../../components/OrganizerHeader';
+import {Hourglass} from 'react-loader-spinner';
 
 const OrgLogin = () => {
   const { status } = useSelector((state) => state.organizer);
@@ -29,7 +30,18 @@ const OrgLogin = () => {
   };
   
   if (status === STATUSES.LOADING){
-    return <h2>LOADING.....</h2>;
+    return <div className='loader'>
+    <Hourglass
+    className='hourglass'
+ visible={true}
+ height="80"
+ width="80"
+ ariaLabel="hourglass-loading"
+ wrapperStyle={{}}
+ wrapperClass=""
+ colors={['#C30202', '#C30202']} 
+ />
+ </div>;
   }
 
   if (status === STATUSES.ERROR){
@@ -38,7 +50,7 @@ const OrgLogin = () => {
 
 
   return (
-    <>
+    <div className='wrapperParent'>
     <OrganizerHeader/>
      <div className="login-container">
       <form onSubmit={handleLogin}>
@@ -57,8 +69,7 @@ const OrgLogin = () => {
         </p>
       </form>
     </div>
-    <Footerr/>
-    </>
+    </div>
    
   );
 }
