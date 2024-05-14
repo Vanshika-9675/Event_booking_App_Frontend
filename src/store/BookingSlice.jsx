@@ -10,7 +10,7 @@ export const Bookticket = createAsyncThunk('user/book', async (bookingData, { re
     try {
         const token = localStorage.getItem('token');
         const {ticketId,eventId} = bookingData;
-        const response = await fetch(`http://localhost:3000/api/v1/user/book/${eventId}/${ticketId}`, {
+        const response = await fetch(`https://event-booking-app-1.onrender.com/api/v1/user/book/${eventId}/${ticketId}`, {
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json',
