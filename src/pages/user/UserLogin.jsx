@@ -29,31 +29,26 @@ function UserLogin() {
       alert('Login failed: ' + error.toString());
     }) 
   };
-  
-  if (status === STATUSES.LOADING){
-    return <div className='loader'>
-    <Hourglass
-    className='hourglass'
- visible={true}
- height="80"
- width="80"
- ariaLabel="hourglass-loading"
- wrapperStyle={{}}
- wrapperClass=""
- colors={['#C30202', '#C30202']} 
- />
- </div>
-  }
-
-  if (status === STATUSES.ERROR){
-      return <h2>Something went wrong...</h2>;
-  }
-
 
   return (
     <div className='wrapperParent'>
     <Headerr/>
-     <div className="login-container">
+    {status === STATUSES.LOADING && (
+            <div className="loader">
+              <Hourglass
+                className="hourglass"
+                visible={true}
+                height="80"
+                width="80"
+                ariaLabel="hourglass-loading"
+                wrapperStyle={{}}
+                wrapperClass=""
+                colors={["#C30202", "#C30202"]}
+              />
+            </div>
+       )}
+          {status === STATUSES.ERROR && <p>Error: {error}</p>}
+     <div className={status === STATUSES.LOADING?"invisible":"login-container"}>
       <form onSubmit={handleLogin}>
         <h2>Login</h2>
         <div>

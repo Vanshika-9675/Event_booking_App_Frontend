@@ -1,21 +1,28 @@
+.eventDeetsParent{
+    width: 100%;
+    height: 100%;
+}
+
+.events-parent{
+    padding: 50px;
+    margin:0 auto;
+}
+
 .eventDetails-wrapper{
-    background-color: white;
-   margin: auto;
+   max-width: 50%;
+   margin:0 25%;
+   background-color: white;
    margin-top: 20px;
    padding: 20px;
    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
    margin-bottom: 80px;
-   margin-left: 40px;
-   margin-right: 40px;
 }
 
 .event-details-image{
-    width: auto;
+    width: 100%; 
     height: 250px;
-    width: 100%;
     object-fit: cover;
 }
-
 
 .event-descripton{
     color: grey;
@@ -30,10 +37,25 @@
     border-image: url(https://static.meraevents.com/css/res/images/border-ticket2.png) 0 0 75% 18% !important;
 }
 
+.ticket-parent{
+    width: 100%;
+}
+
+.tickets-list{
+    width: 50%;
+    margin: auto;
+   background-color: white;
+   margin-top: 20px;
+   padding: 20px;
+   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+   margin-bottom: 80px;
+}
+
 .ticket-heading{
     margin-top: 10px;
     font-weight: 600;
 }
+
 .tickets{
     list-style: none;
     width: 80%;
@@ -41,6 +63,7 @@
     border-right: 2px solid #C4C4C4;  
     margin-top: 20px;
 }
+
 .ticket-deets{
     display: flex;
     align-items: center;
@@ -48,10 +71,12 @@
     padding: 0 20px;
     text-align: center;
 }
+
 .ticket-deets h3{
     padding: 5px;
     color: brown;
 }
+
 .ticket-deets h5{
     padding: 20px;
     font-size: large;
@@ -65,23 +90,43 @@
     margin: 20px;
     padding: 5px;
     border-radius: 15px;
-   
+    background-color: rgba(146, 89, 89, 0.445);
 }
-.ticket-deets button:hover{
-    background-color: #3939393b;
+
+.getTicket{
+    padding: 5px 25px;
+    color: white;
+    background-color: #AA0101;
+    outline: none;
+    border: none;
+    margin: 10px;
+    cursor: pointer;
 }
+
+.selectedButton{
+   background-color: rgba(50, 137, 50, 0.347) !important;
+}
+
 
 
 @media (max-width: 768px) {
     .tickets{
         width: 100%; 
     }
-}
-@media (max-width:480px) {
+   
+    .ticket-parent{
+        width: 80%;
+        position: absolute;
+        right: 0;
+    }
     .ticket-deets{
         flex-direction: column;
     }
+    .getTicket{
+            width: 100%;
+         margin:0px
+    }
+           
 }
-
 
 

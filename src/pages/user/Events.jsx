@@ -8,18 +8,23 @@ import { IoMdInformationCircleOutline } from "react-icons/io";
 import {STATUSES,fetchAllEvents} from '../../store/eventsSlice'
 import { ShimmerCategoryItem } from "react-shimmer-effects";
 import { Link } from 'react-router-dom';
-
+import { useState } from 'react';
+import { FaSearch } from "react-icons/fa";
 
 
 
 const Events = () => {
   const dispatch = useDispatch();
   const { data, status, error } = useSelector((state) => state.events);
+  const [searchLocation, setSearchLocation] = useState('');
+  const [filteredEvents,setfilteredEvents] = useState([]);
+
 
   useEffect(() => {
     dispatch(fetchAllEvents());
     console.log(data);
   }, [dispatch]);
+
 
   const renderShimmerItems = () => {
     const shimmerItems = [];
@@ -40,9 +45,39 @@ const Events = () => {
     return shimmerItems;
   };
 
+
+  useEffect(() => {
+    if (status === STATUSES.IDLE && Array.isArray(data)) {
+      const events = data.filter((event) => {
+        const matchesLocation =
+          !searchLocation || event.location.toLowerCase().includes(searchLocation.toLowerCase());
+        return matchesLocation;
+      });
+      setfilteredEvents(events);
+    }
+  }, [status, data, searchLocation]);
+  
+  
+
+  const handleSearchLocationChange = (e) => {
+    setSearchLocation(e.target.value);
+  };
+
+
   return (
     <div className='events-wrapper'>
-      <h1 style={{ textAlign: 'center' }}>Upcoming Events</h1>
+       <div className='search'>
+        <input
+          type='text'
+          placeholder= "Search by location"
+          value={searchLocation}
+          onChange={handleSearchLocationChange}
+        />
+        <FaSearch className='searchIcon' />
+      </div>
+      <h1 style={{ textAlign: 'center' }}>Events</h1>
+            {/* Search Bar */}
+
      {status === STATUSES.LOADING && <div>
         {renderShimmerItems()}
      </div>
@@ -50,8 +85,8 @@ const Events = () => {
        {status === STATUSES.ERROR && <p>Something went wrong..</p>}
       {status === STATUSES.IDLE && (
          <div className='events-parent'>
-           {Array.isArray(data) && data.length > 0 ? (
-             data.map((event) => (
+           {filteredEvents.length > 0 ? (
+            filteredEvents.map((event) =>(
            <div key={event.id} className='event'>
                 <img height={120} width={150} src={event.Imagesrc} alt='' />
                  <div>

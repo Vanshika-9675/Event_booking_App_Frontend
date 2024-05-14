@@ -41,4 +41,33 @@
     background-color: #a70303;
   }
 
+  .personal-container{
+    width: 50%;
+    margin: 75px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: white;
+  }
+
+.personal-info-container{
+   width: 100%;
+   display: flex;
+   gap: 20px;
+}
+
+
+@media (max-width: 768px) {
+  .personal-info-container{
+    width: 80%;
+    position: absolute;
+    right: 0;
+ }
+  .personal-container{
+    width: 70%;
+    margin: 75px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: white;
+  }
+}
   

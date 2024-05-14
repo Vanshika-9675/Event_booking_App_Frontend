@@ -32,25 +32,25 @@ function UserSignup() {
 
 };
 
-  if (status === STATUSES.LOADING){
-    return <div className='loader'>
-       <Hourglass
-       className='hourglass'
-    visible={true}
-    height="80"
-    width="80"
-    ariaLabel="hourglass-loading"
-    wrapperStyle={{}}
-    wrapperClass=""
-    colors={['#C30202', '#C30202']} 
-    />
-    </div>
-   }
-
   return (
     <div className='wrapperParent'>
     <Headerr/>
-    <div className="signup-container">
+    {status === STATUSES.LOADING && (
+            <div className="loader">
+              <Hourglass
+                className="hourglass"
+                visible={true}
+                height="80"
+                width="80"
+                ariaLabel="hourglass-loading"
+                wrapperStyle={{}}
+                wrapperClass=""
+                colors={["#C30202", "#C30202"]}
+              />
+            </div>
+          )}
+          {status === STATUSES.ERROR && <p>Error: {error}</p>}
+    <div className={status === STATUSES.LOADING?"invisible":"signup-container"}>
       <form onSubmit={handleSignup}>
         <h2>Sign Up</h2>
         <div>

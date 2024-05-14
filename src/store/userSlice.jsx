@@ -9,7 +9,7 @@ export const STATUSES = Object.freeze({
 
 export const userSignup = createAsyncThunk('user/signup', async (userData, { rejectWithValue }) => {
     try {
-        const response = await fetch('https://event-booking-app-1.onrender.com/api/v1/user/register', {
+        const response = await fetch('http://localhost:3000/api/v1/user/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(userData),
@@ -28,7 +28,7 @@ export const userSignup = createAsyncThunk('user/signup', async (userData, { rej
 
 export const userLogin = createAsyncThunk('user/login', async (userData, { rejectWithValue }) => {
     try {
-        const response = await fetch('https://event-booking-app-1.onrender.com/api/v1/user/login', {
+        const response = await fetch('http://localhost:3000/api/v1/user/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(userData),

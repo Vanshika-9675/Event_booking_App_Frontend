@@ -8,7 +8,7 @@ import Events from './Events';
 const UserLanding = () => {
   const isLoggedIn = useSelector(state => state.user.isLoggedIn);
   return (
-    <div>
+    <div className='landing-wrapper'>
     <Headerr />
     <section style={{ display: 'flex'}}>
       {isLoggedIn && (
