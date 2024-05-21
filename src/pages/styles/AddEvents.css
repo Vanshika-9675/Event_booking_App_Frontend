@@ -1,0 +1,96 @@
+ .addEvent {
+    padding: 20px;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 80px;
+  }
+  
+  .addEvent h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .formGroup {
+    margin-bottom: 15px;
+  }
+  
+  .formGroup label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .formGroup input,
+  .formGroup textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  .formGroup textarea {
+    resize: vertical;
+    height: 100px;
+  }
+  
+  .submitButton {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #C30202;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .submitButton:hover {
+    background-color: #850101;
+  }
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modalContent {
+    background-color: white;
+    padding: 20px;
+    border-radius: 4px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+  }
+  
+  .closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .modal h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .addTicketsButton{
+    display: block;
+    padding: 10px;
+    background-color: #C30202;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+  }

@@ -20,6 +20,7 @@ import EventDescription from './pages/user/EventDescription';
 import Footerr from './components/Footerr';
 import TicketSelection from './pages/user/TicketSelection';
 import PersonalInfo from './pages/user/PersonalInfo';
+import EditEvents from './pages/organizer/EditEvents';
 
 const App = () => {
 
@@ -45,6 +46,7 @@ const App = () => {
               <Route path='/eventDescription/:value' element={<EventDescription/>}></Route>
               <Route path='/ticketSelection/:value' element={<TicketSelection/>}></Route>
               <Route path='/personalInfo/:eventId' element={<PersonalInfo/>}></Route>
+              <Route path='/editEvent/:value' element={<EditEvents/>}></Route>
            </Routes>
          </Provider>
          <Footerr/>

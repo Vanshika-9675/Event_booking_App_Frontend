@@ -1,0 +1,47 @@
+.organizeImg{
+   width: 50%;
+}
+.organizerText{
+    width: 50%;
+    overflow: hidden;
+}
+.orgHero{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.organizeImg img{
+    width: 100%;
+    height: 600px;
+}
+.organizerText{
+    padding-left: 50px;
+}
+.organizerText p{
+    color: gray;
+}
+.organizerText button{
+    margin-top: 10px;
+   padding: 10px;
+   border-radius: 10px;
+   background-color: #C30202;
+   color: white;
+   outline: none;
+   border: none;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   gap: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .organizeImg{
+        visibility: hidden;
+    }
+    .organizerText{
+       width: 100%;
+       padding-left:40px;
+    }
+}

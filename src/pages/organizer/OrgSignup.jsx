@@ -23,7 +23,7 @@ const OrgSignup = () => {
     dispatch(organizerRegister({ userName, email, password }))
         .unwrap()
         .then(() => {
-            navigation('/organizer');
+            navigation('/dashboard');
         })
         .catch((error) => {
             console.error('Failed to sign up:', error);
