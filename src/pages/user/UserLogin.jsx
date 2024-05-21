@@ -23,7 +23,7 @@ function UserLogin() {
     event.preventDefault();
     dispatch(userLogin({ email, password })).unwrap()
     .then(()=>{
-      navigation('/user');
+      navigation('/dashboard');
     }).catch(()=>{
       console.error('Failed to log in:', error);
       alert('Login failed: ' + error.toString());
