@@ -41,7 +41,7 @@ export const addEvent = createAsyncThunk(
     async (eventDetails, { rejectWithValue }) => {
         try {
         const organizerToken = localStorage.getItem('organizerToken');
-      const response = await fetch('https://event-booking-app-khy3.onrender.com/api/v1/organizer/event', {
+      const response = await fetch('https://event-booking-app-1.onrender.com/api/v1/organizer/event', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ export const addEvent = createAsyncThunk(
 export const fetchOrgEvents = createAsyncThunk('fetch/OrgEvents', async (_, { rejectWithValue }) => {
     try {
         const organizerToken = localStorage.getItem('organizerToken');
-        const response = await fetch('https://event-booking-app-khy3.onrender.com/api/v1/organizer/event',{
+        const response = await fetch('https://event-booking-app-1.onrender.com/api/v1/organizer/event',{
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${organizerToken}`
@@ -87,7 +87,7 @@ export const deleteEvent = createAsyncThunk(
     async (eventId, { rejectWithValue }) => {
       try {
         const organizerToken = localStorage.getItem('organizerToken');
-        const response = await fetch(`https://event-booking-app-khy3.onrender.com/api/v1/organizer/event/${eventId}`, {
+        const response = await fetch(`https://event-booking-app-1.onrender.com/api/v1/organizer/event/${eventId}`, {
           method: 'DELETE',
           headers: {
             'Authorization': `Bearer ${organizerToken}`
@@ -115,7 +115,7 @@ export const editEvent = createAsyncThunk(
         
       try {
         const organizerToken = localStorage.getItem('organizerToken');
-        const response = await fetch(`https://event-booking-app-khy3.onrender.com/api/v1/organizer/event/${eventId}`, {
+        const response = await fetch(`https://event-booking-app-1.onrender.com/api/v1/organizer/event/${eventId}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',

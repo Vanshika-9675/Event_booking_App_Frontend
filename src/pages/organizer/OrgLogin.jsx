@@ -22,7 +22,7 @@ const OrgLogin = () => {
     dispatch(organizerLogin({ email, password }))
       .unwrap()
       .then(() => {
-        navigation("/");
+        navigation("/dashboard");
       })
       .catch(() => {
         console.error("Failed to log in:", error);
